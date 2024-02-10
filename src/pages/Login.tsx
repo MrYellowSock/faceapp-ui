@@ -1,20 +1,12 @@
 import React from 'react'
 import { Container, Navbar, Row, Nav, Image, Form, Button, Col } from 'react-bootstrap'
+import MyNav from '../components/MyNav'
 
 export default function Login() {
 	return (
 		<Container>
 			<Row>
-				<Navbar bg="light" expand="lg" className='px-3'>
-					<Navbar.Brand href="/" >Hello World!</Navbar.Brand>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="mr-auto">
-							<Nav.Link href="/">Home</Nav.Link>
-							<Nav.Link href="/setting">Setting</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Navbar>
+				<MyNav />
 			</Row>
 			<Row>
 				<Container>
@@ -22,7 +14,7 @@ export default function Login() {
 						<Image src="./images/wojak.webp" className='account rounded-circle border border-dark' fluid />
 					</Row>
 					<Row>
-						<Form>
+						<Form action='/manage'>
 							<Container>
 								<Row>
 									<Form.Group controlId="username">
