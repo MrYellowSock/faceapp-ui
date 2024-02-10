@@ -53,6 +53,11 @@
 	height: 30px;
 }
 
+.account {
+  max-width: 30vh;
+  height: auto;
+}
+
 .setting {
 	height: 50px;
 	width: auto;
