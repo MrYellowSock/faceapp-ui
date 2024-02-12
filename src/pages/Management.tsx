@@ -15,7 +15,7 @@ export default function Management() {
 			<Row>
 				<ManagementCard href="/user" title='User management' cardImageSrc='./images/setting.png'></ManagementCard>
 				<ManagementCard href="/setting" title='Setting' cardImageSrc='./images/setting.png'></ManagementCard>
-				<ManagementCard href="/admin" title='Admin management' cardImageSrc='./images/setting.png'></ManagementCard>
+				{/* <ManagementCard href="/admin" title='Admin management' cardImageSrc='./images/setting.png'></ManagementCard> */}
 			</Row>
 		</Container>
 	)

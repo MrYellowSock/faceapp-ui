@@ -29,12 +29,17 @@ export default function UserManagementAdd() {
 		setCroppedAreaPixels(croppedAreaPixels)
 	};
 
+	const handleClearCropped = () => {
+		setCropped(false);
+		setCroppedImage('');
+	}
 	const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files?.[0];
 		if (file) {
 			const reader = new FileReader();
 			reader.onloadend = () => {
 				setImage(reader.result as string);
+				handleClearCropped()
 			};
 			reader.readAsDataURL(file);
 		}
@@ -53,13 +58,10 @@ export default function UserManagementAdd() {
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		// Perform save logic here
-		// Show the success modal
 		setShowModal(true);
 	};
 
 	const handleCloseModal = () => {
-		// Close the success modal
 		setShowModal(false);
 	};
 
@@ -85,9 +87,15 @@ export default function UserManagementAdd() {
 						<br></br>
 					</>
 				)}
-				<Button type="submit" variant="primary">
+				<Button type="submit" variant="primary" className='mt-3'>
 					Save
 				</Button>
+				{
+					croppedImage && <Button variant="danger float-end" className='mt-3' onClick={handleClearCropped}>
+						Recrop
+					</Button>
+
+				}
 
 				{image && !cropped && (
 					<ReactCrop
@@ -102,7 +110,7 @@ export default function UserManagementAdd() {
 				)}
 			</Form>
 			{image && !cropped &&
-				<Button onClick={handleFinishCropping} >FINISH {cropped}</Button>
+				<Button onClick={handleFinishCropping}>FINISH {cropped}</Button>
 			}
 
 			{/* Success Modal */}

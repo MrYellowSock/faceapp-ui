@@ -5,11 +5,13 @@ import MyNav from '../components/MyNav'
 export default function Login() {
 	return (
 		<Container>
+			{/*
+		<Row>
+		<MyNav />
+		</Row>
+		*/}
 			<Row>
-				<MyNav />
-			</Row>
-			<Row>
-				<Container>
+				<Container className="p-5">
 					<Row className="d-flex justify-content-center align-items-center">
 						<Image src="./images/wojak.webp" className='account rounded-circle border border-dark' fluid />
 					</Row>
