@@ -6,6 +6,9 @@ import Setting from "./pages/Setting";
 import Login from "./pages/Login";
 import Management from "./pages/Management";
 import UserManagement from "./pages/UserManagement";
+import AdminManagement from "./pages/AdminManagement";
+import AdminManagementAdd from "./pages/AdminManagementAdd";
+import AdminManagementEdit from "./pages/AdminManagementEdit";
 
 function App() {
 	return (
@@ -15,6 +18,9 @@ function App() {
 				<Route path="/setting" element={<Setting></Setting>} />
 				<Route path="/login" element={<Login></Login>} />
 				<Route path="/user" element={<UserManagement></UserManagement>}></Route>
+				<Route path="/admin" element={<AdminManagement></AdminManagement>}></Route>
+				<Route path="/admin/add" element={<AdminManagementAdd></AdminManagementAdd>}></Route>
+				<Route path="/admin/edit/:id" element={<AdminManagementEdit></AdminManagementEdit>}></Route>
 				<Route path="/" element={
 					<Home persons={[
 						{
